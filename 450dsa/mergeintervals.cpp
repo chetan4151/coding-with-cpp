@@ -1,23 +1,23 @@
-// #include<bits/stdc++.h>
-// using namespace std;
-// vector<vector<int>> merge(vector<vector<int>> &intervals)
-// {
-//     vector<int>::iterator it;
-//     for (int i = 0; i < intervals.size() - 1; i++)
-//     {
-//         if (intervals[i][1] >= intervals[i + 1][0])
-//         {
-//             intervals[i][1] = max(intervals[i][1],intervals[i + 1][1]);
-//             it = intervals.begin()+i+1;
-//             intervals.erase(it);
-//             // while (i < intervals.size() - 2)
-//             // {
-//             //     intervals[i + 1] = intervals[i + 2];
-//             // }
-//         }
-//     }
-//     return intervals;
-// }
+#include<bits/stdc++.h>
+using namespace std;
+vector<vector<int>> merge(vector<vector<int>> &intervals)
+{
+    vector<int>::iterator it;
+    for (int i = 0; i < intervals.size() - 1; i++)
+    {
+        if (intervals[i][1] >= intervals[i + 1][0])
+        {
+            intervals[i][1] = max(intervals[i][1],intervals[i + 1][1]);
+            it = intervals.begin()+i+1;
+            intervals.erase(it);
+            // while (i < intervals.size() - 2)
+            // {
+            //     intervals[i + 1] = intervals[i + 2];
+            // }
+        }
+    }
+    return intervals;
+}
 // int main()
 // {
 //     vector <vector<int>> range= {{1,3},{2,6},{8,10},{15,20}};
